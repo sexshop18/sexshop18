@@ -1360,3 +1360,20 @@ div.item_deo h6 a:hover
 {
     color:#00E;
 }
+
+.us-phone-number{
+    position: fixed;
+    left: 2px;
+    bottom: 10px;
+    background-color: #92278f;
+    height: 35px;
+    padding-top: 5px;
+    width: 200px;
+    float: right;
+    font-size: 2em;
+    color: #fff;
+}
+
+.us-phone-number:hover{
+    background-color:#008080;
+}

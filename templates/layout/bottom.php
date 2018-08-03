@@ -35,12 +35,14 @@
     </ul>
 </div>
 
-<div class="nhanemail">
+<!-- <div class="nhanemail">
 	<p class="td_ft5">Đăng ký nhận tin</p>
     <p>Đăng ký email của bạn để nhận tin khuyến mãi mới nhất từ chúng tôi.</p>
-    <?php include _template."layout/dangkynhantin.php";?>
+	<?php 
+	// include _template."layout/dangkynhantin.php";
+	?>
     <!--<a href="" target="_blank"><img src="images/2018-05-16.png" /></a>-->
-</div>
+</div> -->
 
 <div class="fanpage">
 <p class="td_ft5">Fanpage facebook</p>

@@ -13,3 +13,9 @@
 		<?=$chinhanh[$i]['noidung']?>
 	</div>
 <?php } ?>
+<a href="#">
+	<div class="us-phone-number">
+	<i class="fa fa-phone" aria-hidden="true"> 0938005909</i>
+	</div>
+</a>
+
