@@ -170,7 +170,7 @@ return $info;
     </td>
   </tr>
 
-  <? } ?>
+  <?php } ?>
   </tbody>
 </table>
 <div id="inline_content"></div>
