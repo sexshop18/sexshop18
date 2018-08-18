@@ -37,18 +37,6 @@ if ($_REQUEST['command'] == 'add' && $_REQUEST['productid'] > 0) {
 }
 ?>
 
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5b5e7cd5df040c3e9e0c121a/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 <!doctype html>
 <html lang="vi">
 
@@ -128,19 +116,23 @@ s0.parentNode.insertBefore(s1,s0);
             
             <?php include _template . "layout/phone2.php"; ?>
         <?php } else { ?>
-            <div id="wapper">
-                <div id="wap_header">
-                    <div id="header">
-                        <?php include _template . "layout/header.php"; ?>
-                    </div><!---END #header-->
-                    <div class="clear"></div>
+            <div id="wap_header">
+                <div id="header">
+                    <?php include _template . "layout/header.php"; ?>
                 </div><!---END #header-->
-
-                <div id="wap_menu">
-                    <div id="menu">
-                        <?php include _template . "layout/menu_top.php"; ?>
-                    </div><!---END #menu-->
-                </div><!---END #menu-->
+                <div class="clear"></div>
+            </div><!---END #header-->
+            <main>
+            <div id="wapper">
+                <!-- <div id="wap_menu">
+                    <div id="menu"> -->
+                        <?php 
+                        // include _template . "layout/menu_top.php"; 
+                        ?>
+                    <!-- </div> -->
+                    <!---END #menu-->
+                <!-- </div> -->
+                <!---END #menu-->
 				<?php if($_GET['com']==''||$_GET['com']=='index'){ ?>
                 <div id="slider">
                     <?php include _template . "layout/slider_jssor.php"; ?>
@@ -178,6 +170,7 @@ s0.parentNode.insertBefore(s1,s0);
                     <div class="clear"></div>
                 </div><!---END #footer--> 
             </div><!---END #footer--> 
+            </main>
         <?php } ?>
 
     </body>

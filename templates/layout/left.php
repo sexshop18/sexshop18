@@ -56,7 +56,7 @@ $danhmuc = $d->result_array();
                     <div class="best_product_sub"><p><?= $danhmuc[$i]['ten'] ?> - Sản phẩm nổi bật</p></div>
                     <?php
                     $d->reset();
-                    $sql_best_product = 'select id,ten,tenkhongdau,photo,thumb,giacu,gia,masp,mota from #_product where hienthi=1 and noibat=1 AND id_list in('.implode(',',$best_product_id).') order by luotxem DESC LIMIT 4';
+                    $sql_best_product = 'select id,ten,tenkhongdau,photo,thumb,giacu,gia,masp,mota from #_product where hienthi=1 and noibat=1 AND id_list in('.implode(',',$best_product_id).') order by luotxem DESC LIMIT 3';
                     $d->query($sql_best_product);
                     $best_product_list = $d->result_array();
                     foreach ($best_product_list as $key => $value) {
