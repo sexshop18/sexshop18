@@ -294,8 +294,9 @@ div.search i
 }
 div#slider
 {
-    margin:auto;
-    padding-top: 15px;
+    margin: auto;
+    border: none;
+    box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 div.gioithieu
 {
@@ -1418,7 +1419,7 @@ div.item_deo h6 a:hover
     margin-left: 185pt;
     width: 70%;
     height: auto;
-    background-color: #fff;
+    background-color: #f4f4f4;
     margin-top: -33px;
 }
 
@@ -1534,7 +1535,7 @@ Primary style
   .cd-header {
     height: 50px;
     width: 100%;
-    background-color: #fff600;
+    background-color: #f4f4f4;
     margin: 0 auto;
     -webkit-transition: -webkit-transform 0.5s;
     -moz-transition: -moz-transform 0.5s;
@@ -1803,7 +1804,7 @@ Primary style
     .cd-3d-nav a {
       padding: 1em 0.5em 0;
       color: #ffffff;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 600;
       text-align: center;
       -webkit-font-smoothing: antialiased;
