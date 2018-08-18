@@ -3,12 +3,10 @@
 	error_reporting(E_ALL & ~E_NOTICE & ~8192);
 	$config_url=$_SERVER["SERVER_NAME"].'';	
 	
-	$config['database']['servername'] = '112.213.89.20';
-	// $config['database']['servername'] = '112.213.89.41';
-
-	$config['database']['username'] = 'sexshop1_db';
-	$config['database']['password'] = 'sexshop1_db';
-	$config['database']['database'] = 'sexshop1_db';
+	$config['database']['servername'] = '';
+	$config['database']['username'] = '';
+	$config['database']['password'] = '';
+	$config['database']['database'] = '';
 	$config['database']['refix'] = 'table_';
 	
 	$ip_host = '127.0.0.1';
