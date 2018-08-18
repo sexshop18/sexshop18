@@ -37,20 +37,6 @@ if ($_REQUEST['command'] == 'add' && $_REQUEST['productid'] > 0) {
 }
 ?>
 
-<!--Start of Tawk.to Script-->
-<!--<script type="text/javascript">-->
-<!--var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();-->
-<!--(function(){-->
-<!--var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];-->
-<!--s1.async=true;-->
-<!--s1.src='https://embed.tawk.to/5b4573b24af8e57442dc8471/default';-->
-<!--s1.charset='UTF-8';-->
-<!--s1.setAttribute('crossorigin','*');-->
-<!--s0.parentNode.insertBefore(s1,s0);-->
-<!--})();-->
-<!--</script>-->
-<!--End of Tawk.to Script-->
-<!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -83,7 +69,8 @@ s0.parentNode.insertBefore(s1,s0);
     </head>
 
     <?php include _template . "layout/background.php"; ?>
-    <body onLoad=" initialize();" <?= $str_background ?>>
+    <!-- <body onLoad=" initialize();" <?= $str_background ?>> -->
+    <body onLoad=" initialize();">
         <div id="pre-loader"><div class="loader"></div></div>
         <h1 class="vcard fn" style="position:absolute; top:-1000px;"><?php
             if ($title != '')

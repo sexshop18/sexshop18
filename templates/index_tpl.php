@@ -3,6 +3,7 @@ $d->reset();
 $sql_product_danhmuc = "select ten$lang as ten,tenkhongdau,id from #_product_danhmuc where hienthi=1 and noibat=1 order by stt";
 $d->query($sql_product_danhmuc);
 $danhmuc = $d->result_array();
+
 ?>
 <script type="text/javascript">
     function loadData(page, id_tab, id_danhmuc) {

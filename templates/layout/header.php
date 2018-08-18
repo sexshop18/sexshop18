@@ -1,3 +1,12 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107365337-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107365337-2');
+</script>
 <?php
 $d->reset();
 $sql_banner = "select photo$lang as photo from #_background where type='banner' limit 0,1";
@@ -55,12 +64,13 @@ $mangxahoi=$d->result_array();
     <span><?=$company['dienthoai']?></span>
 </div>
 <!--Hotline-->
-<!--<div class="mangxahoi">-->
-<!--	<ul>-->
-<!--	<?php  for($i=0,$count_mxh=count($mangxahoi);$i<$count_mxh;$i++){ ?>-->
-<!--		<li>-->
-<!--			<a target="_black" href="<?=$mangxahoi[$i]['link']?>"><img src="<?=_upload_hinhanh_l.$mangxahoi[$i]['photo'] ?>" title="<?=$mangxahoi[$i]['ten']?>" width="100%"/></a>-->
-<!--		</li>-->
-<!--	<?php }?>-->
-<!--	</ul>-->
-<!--</div>-->
+<div class="mangxahoi">
+	<ul>
+	<?php  for($i=0,$count_mxh=count($mangxahoi);$i<$count_mxh;$i++){ ?>
+		<li>
+        <!-- href="<?=$mangxahoi[$i]['link']?> -->
+			<a target="_black" href="#"><img src="<?=_upload_hinhanh_l.$mangxahoi[$i]['photo'] ?>" title="<?=$mangxahoi[$i]['ten']?>" width="100%"/></a>
+		</li>
+	<?php }?>
+	</ul>
+</div>

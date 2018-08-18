@@ -16,7 +16,7 @@ if (isset($_POST["page"])) {
     $paging->text_sql = "select id,ten,tenkhongdau,photo,thumb,giacu,gia,masp,mota from table_product where hienthi=1 and id_danhmuc=" . $_POST["id_danhmuc"] . " and noibat=1 and type='sanpham' order by stt asc";
     $product = $paging->GetResult();
     $message = '';
-    $paging->data = "" . $message . "";
+	$paging->data = "" . $message . "";
 }
 ?>
 <?php

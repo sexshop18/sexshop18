@@ -133,7 +133,7 @@
  	<div class="formRow">
             <label>Title</label>
             <div class="formRight">
-                <input type="text" value="<?=@$item['title']?>" name="title" title="Nội dung thẻ meta Title dùng để SEO" class="tipS" />
+                <input type="text" value="<?=@$item['title']?>" name="title" title="Nội dung thẻ meta Title dùng để SEO" class="tipS meta_title_seo" />
             </div>
             <div class="clear"></div>
         </div>

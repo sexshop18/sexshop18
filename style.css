@@ -19,7 +19,7 @@ div.bando img{max-width:none !important;}
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    font-size:12px;
+    font-size:13pt;
     line-height:1.5;
 }
 @font-face {
@@ -47,9 +47,8 @@ body{
 div#wapper
 { 
     margin:auto;
-    max-width:1366px;
+    max-width:1300px;
     min-width:1200px;
-    background:#fff;
 }
 div#wap_header
 {
@@ -117,7 +116,7 @@ div#wap_menu
 div#menu
 {
     position:relative;
-    width:1200px;
+    width:1300px;
     margin:auto;
 }
 div#menu ul
@@ -353,8 +352,9 @@ div.gioithieu .img
 }
 div#left
 {
-    width:20%;
-    float:right;
+    width:19%;
+    margin-right: 1%;
+    float:left;
 }
 div.tieude
 {
@@ -362,24 +362,26 @@ div.tieude
     text-align: center;
     font-size: 14px;
     background: url(images/tieude.png) center no-repeat;
-    height: 39px;
-    line-height: 39px;
+    height: 30px;
+    line-height: 30px;
     font-weight: normal;
     text-transform: uppercase;
     background-size: cover;
     overflow: hidden;
     font-family: RobotoRegular;
-
 }
 
 div.danhmuc
 {
-    margin-bottom:12px;
-
+    margin-bottom: 12px;
+    background-color: #fff;
+    border-top: solid 1px #e1e1e1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 div.danhmuc ul
 {
-    border: 1px solid #92278f;
+    /* border: 1px solid #92278f; */
 }
 div.danhmuc ul li
 {
@@ -539,13 +541,13 @@ form#frm_dknt input[type='button']
 }
 div#main_content
 {
-    width:1200px;
+    width:1300px;
     margin:20px auto;
 }
 
 div#right
 {
-    width:79%;
+    width:80%;
     display: inline-block;
 }
 .toigiohang{
@@ -604,31 +606,38 @@ div.tieude_giua div
     color: #9d309a;
     font-size: 14px;
 }
+
 div.wap_item
 {
     text-align: center;
     position: relative;
-    border: 1px solid #92278f;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 div.item
 {
-    width: 24%;
+    width: 23%;
     margin: 1% 0.2%;   
     display: inline-block;
     vertical-align: top;
-    border: 1px solid #DDDDDD;
     transition: all 0.5s ease;
+    background: #f4f4f4;
+    border: none;
 }
 div.item:hover{
-    border-color: #92278F;
-    transition: all 0.5s ease
+    border:none;
+    transition: all 0.5s ease;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(0, 0, 0, 0.19);
 }
 div.item .sp_img
 {
     overflow:hidden;  
     margin-bottom:10px;
-    background:#fff;
+    background:#f4f4f4;
     padding: 4px;
 	    height: 220px;
 }
@@ -1376,4 +1385,71 @@ div.item_deo h6 a:hover
 
 .us-phone-number:hover{
     background-color:#008080;
+}
+
+
+.danhmuc ul li .submenu_left{
+     display: none; 
+}
+.right_submenu_content{
+    text-align: right;
+}
+.right_submenu_content div.item{
+    width: 200px;
+}
+.danhmuc ul li .submenu_left ul{
+     float: left;
+     width: 220px;
+     border-right: 1px solid #e1e1e1;
+}
+.danhmuc ul li .submenu_left ul.right_submenu_content{
+    width: 850px;
+    border-right: 1px solid #e1e1e1;
+}
+.danhmuc ul li .submenu_left ul li a{
+    font-size: 10pt; 
+}
+.danhmuc li ul li { border-top: 0; }
+
+.submenu_left{
+    position: absolute;
+    margin-left: 195pt;
+    width: 70%;
+    height: auto;
+    background-color: #fff;
+    margin-top: -39px;
+}
+
+.danhmuc ul li a:hover { 
+    background: #92278f;
+    color: #fff600 !important;
+}
+
+.danhmuc ul li:hover > div.submenu_left{
+    display: inline-flex;
+    box-shadow: 0 15px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.danhmuc li:hover li { float: none; }
+
+.danhmuc ul:before,
+.danhmuc ul:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.danhmuc ul:after { clear: both; }
+.best_product_sub{
+    background-color: #92278f;
+    color: #fff600;
+    font-size: 12pt;
+    font-style: oblique;
+    font-weight: 600;
+    height: 30px;
+}
+.best_product_sub p{
+    padding-top: 5px;
+    padding-right: 10px;
+}
+.right_submenu_content div.item .sp_name{
+    height: 60px;
 }

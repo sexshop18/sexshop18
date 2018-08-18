@@ -72,7 +72,11 @@ div.frm_lienhe .item_lienhe input[type='button'],div.frm_lienhe .item_lienhe inp
 
 /*----------Phân trang ajax-------------*/
 .pages_ajax{ display:inline-block;}
-.pages_ajax li {display: inline-block;margin: 5px 2px;height: 25px;padding: 4px 8px;text-decoration: none;color: #666666;font-weight: bold;border: 1px solid #9f319c;font-size: 11px;box-sizing: border-box;min-width: 30px;cursor: pointer;}
+.pages_ajax li {display: inline-block;margin: 10px 10px;height: 25px;
+padding: 4px 8px;text-decoration: none;color: #666666;font-weight: bold;
+/* border: 1px solid #9f319c; */
+font-size: 11px;box-sizing: border-box;min-width: 30px;cursor: pointer;box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+}
 .pages_ajax li.actived,.pages_ajax li:hover {background: #a637a3; color:#fff;}
 span.total{ display:none;}
 /*----------Phân trang ajax-------------*/
