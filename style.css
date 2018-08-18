@@ -1943,3 +1943,12 @@ Primary style
   a.cd-logo img{
     max-width: 350px !important;
   }
+  .menu_main_nav{
+      text-indent: 0;
+  }
+  .menu_main_nav i{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20pt;
+  }

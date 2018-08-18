@@ -43,15 +43,22 @@ $mangxahoi=$d->result_array();
 ?>
 
 <header class="cd-header">
-		<a href="" class="cd-logo"><img src="https://sexshop18.vn/upload/hinhanh/logo_sexshop18-1663.jpg" alt="Logo"></a>
-		<a href="#0" class="cd-3d-nav-trigger"><span></span></a>
-	</header> <!-- .cd-header -->
+    <a href="" class="cd-logo"><img src="https://sexshop18.vn/upload/hinhanh/logo_sexshop18-1663.jpg" alt="Logo"></a>
+    <a href="#0" class="cd-3d-nav-trigger"><span></span></a>
+    <div class="main_header_menu">
+    <a href="#0" class="cd-3d-nav-trigger menu_main_nav"><i style="color: darkviolet;" class="fas fa-venus-mars"></i></a>
+    <a href="#0" class="cd-3d-nav-trigger menu_main_nav"><i class="fas fa-mars-double"></i></a>
+    <a href="#0" class="cd-3d-nav-trigger menu_main_nav"><i style="color:  deeppink;" class="fas fa-venus-double"></i></a>
+    <a href="#0" class="cd-3d-nav-trigger menu_main_nav"><i  class="fas fa-mars"></i></a>
+    <a href="#0" class="cd-3d-nav-trigger menu_main_nav"><i style="color:  deeppink;" class="fas fa-venus"></i></a>
+    </div>
+</header> <!-- .cd-header -->
 	
 	<nav class="cd-3d-nav-container">
         
 		<ul class="cd-3d-nav">
         <li class="cd-selected">
-            <a href="">Home</a>
+            <a href=""><i class="fas fa-home"></i></a>
         </li>
         <?php foreach ($product_danhmuc as $key => $value) {?>
             <li>
