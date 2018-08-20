@@ -11,7 +11,6 @@
                       $(id_tab+" .pagination li.active").click(function(){
                         var pager = $(this).attr("p");
                         var id_danhmucr = $(this).parents().parents().parents().attr("data-rel");
-                        
                         loadData(pager,".load_page_"+id_danhmucr,id_danhmucr);
                     });  
             }

@@ -44,7 +44,7 @@ $mangxahoi=$d->result_array();
 
 <header class="cd-header">
     <a href="" class="cd-logo"><img src="https://sexshop18.vn/upload/hinhanh/logo_sexshop18-1663.jpg" alt="Logo"></a>
-    <a href="#0" class="cd-3d-nav-trigger"><span></span></a>
+    <a  class="cd-3d-nav-trigger"><span></span></a>
     <div class="main_header_menu">
     <a href="#0" class="cd-3d-nav-trigger menu_main_nav"><i style="color: darkviolet;" class="fas fa-venus-mars"></i></a>
     <a href="#0" class="cd-3d-nav-trigger menu_main_nav"><i class="fas fa-mars-double"></i></a>
@@ -61,52 +61,101 @@ $mangxahoi=$d->result_array();
             <a href=""><i class="fas fa-home"></i></a>
         </li>
         <?php foreach ($product_danhmuc as $key => $value) {?>
-            <li>
-				<a href="san-pham/<?= $value['tenkhongdau'] ?>-<?= $value['id'] ?>"><?php echo $value['ten']; ?></a>
+            <li id = "<?= $value['id'] ?>">
+                <a href="san-pham/<?= $value['tenkhongdau'] ?>-<?= $value['id'] ?>"><?php echo $value['ten']; ?></a>
+                
 			</li>
         <?php } ?>
 		</ul> <!-- .cd-3d-nav -->
-	</nav> <!-- .cd-3d-nav-container -->
-<!-- <a href="" class="logo"><img src="<?= _upload_hinhanh_l . $row_banner['photo'] ?>" /></a> -->
-<!-- <div class="search">
-    <select name="tim_danhmuc">
-        <option value="0"><?= _chondanhmuc ?></option>
-        <?php for ($i = 0, $count_product_danhmuc = count($product_danhmuc); $i < $count_product_danhmuc; $i++) { ?>
-        <option value="<?= $product_danhmuc[$i]['id'] ?>"><?= $product_danhmuc[$i]['ten'] ?></option>
-        <?php } ?>
-    </select>
-    <input type="text" name="keyword" id="keyword" onKeyPress="doEnter(event, 'keyword');" value="<?= _nhaptukhoatimkiem ?>..." onclick="if (this.value == '<?= _nhaptukhoatimkiem ?>...') {
-                this.value = ''
-            }" onblur="if (this.value == '') {
-                        this.value = '<?= _nhaptukhoatimkiem ?>...'
-                    }">
-    <div class="tim" onclick="onSearch(event, 'keyword');">
-        <p>Tìm kiếm</p>
-    </div>
-    <div class="timnhieu">
-        <p>Từ khóa tìm nhiều: <ul>
-            <?php for ($i = 0, $count_hotro = count($hotro); $i < $count_hotro; $i++) { ?>
-                <li><a target="_black" href="<?= $hotro[$i]['skype'] ?>"><?= $hotro[$i]['ten'] ?></a></li>
-            <?php } ?>
-        </ul></p>
-    </div>
-</div><!---END #search-->   
-<!--hotline-->
-<!-- <div class="toigiohang">
-    <a href="gio-hang.html" class="cart_mt"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span> Giỏ hàng: <?php if(count($_SESSION['cart'])>0)echo count($_SESSION['cart']);else echo '0';?>  SP</span></a> 
-</div>
-<div class="hotlineh">
-    Hotline:</br>   
-    <span><?=$company['dienthoai']?></span>
-</div>
-<!--Hotline-->
-<!-- <div class="mangxahoi">
-	<ul>
-	<?php  for($i=0,$count_mxh=count($mangxahoi);$i<$count_mxh;$i++){ ?>
-		<li>
-        <!-- href="<?=$mangxahoi[$i]['link']?> -->
-			<!-- <a target="_black" href="#"><img src="<?=_upload_hinhanh_l.$mangxahoi[$i]['photo'] ?>" title="<?=$mangxahoi[$i]['ten']?>" width="100%"/></a>
-		</li>
-	<?php }?>
-	</ul>
-</div> -->
+    </nav> <!-- .cd-3d-nav-container -->
+    <script>
+        jQuery(document).ready(function($){
+            //toggle 3d navigation
+            $('.cd-3d-nav-trigger').on('click', function(){
+                toggle3dBlock(!$('.cd-header').hasClass('nav-is-visible'));
+            });
+            //select a new item from the 3d navigation
+            $('.cd-3d-nav').on('click', 'a', function(){
+            var selected = $(this);
+                id_danhmucr = selected[0].parentNode.id;
+                writeCookie('id_product_select',id_danhmucr,2);
+            });
+            var tmp = readCookie('id_product_select');
+            $('.cd-3d-nav li#'+tmp).addClass('cd-selected').siblings('li').removeClass('cd-selected');
+            updateSelectedNav('close');
+            eraseCookie('id_product_select');
+            console.log(tmp);
+
+            $(window).on('resize', function(){
+                window.requestAnimationFrame(updateSelectedNav);
+            });
+
+            function toggle3dBlock(addOrRemove) {
+                if(typeof(addOrRemove)==='undefined') addOrRemove = true;	
+                $('.cd-header').toggleClass('nav-is-visible', addOrRemove);
+                $('.cd-3d-nav-container').toggleClass('nav-is-visible', addOrRemove);
+                $('main').toggleClass('nav-is-visible', addOrRemove).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+                    //fix marker position when opening the menu (after a window resize)
+                    addOrRemove && updateSelectedNav();
+                });
+            }
+
+            //this function update the .cd-marker position
+            function updateSelectedNav(type) {
+                var selectedItem = $('.cd-selected'),
+                    selectedItemPosition = selectedItem.index() + 1, 
+                    leftPosition = selectedItem.offset().left,
+                    backgroundColor = selectedItem.data('color'),
+                    marker = $('.cd-marker');
+
+                marker.removeClassPrefix('color').addClass('color-'+ selectedItemPosition).css({
+                    'left': leftPosition,
+                });
+                if( type == 'close') {
+                    marker.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+                        toggle3dBlock(false);
+                    });
+                }
+            }
+
+            $.fn.removeClassPrefix = function(prefix) {
+                this.each(function(i, el) {
+                    var classes = el.className.split(" ").filter(function(c) {
+                        return c.lastIndexOf(prefix, 0) !== 0;
+                    });
+                    el.className = $.trim(classes.join(" "));
+                });
+                return this;
+            };
+
+            function writeCookie(name,value,days) {
+                var date, expires;
+                if (days) {
+                    date = new Date();
+                    date.setTime(date.getTime()+(days*24*60*60*1000));
+                    expires = "; expires=" + date.toGMTString();
+                        }else{
+                    expires = "";
+                }
+                document.cookie = name + "=" + value + expires + "; path=/";
+            }
+            function eraseCookie(name) {
+                document.cookie = name + '=; Max-Age=0'
+            }
+            function readCookie(name) {
+                var i, c, ca, nameEQ = name + "=";
+                ca = document.cookie.split(';');
+                for(i=0;i < ca.length;i++) {
+                    c = ca[i];
+                    while (c.charAt(0)==' ') {
+                        c = c.substring(1,c.length);
+                    }
+                    if (c.indexOf(nameEQ) == 0) {
+                        return c.substring(nameEQ.length,c.length);
+                    }
+                }
+                return '';
+            }
+        });
+    </script>
+    

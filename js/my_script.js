@@ -1,4 +1,4 @@
-<!--Nut Back to top-->
+// <!--Nut Back to top-->
 $(document).ready(function() {
    setTimeout(function(){
 	   $("#pre-loader").fadeOut(1000);
@@ -33,9 +33,9 @@ $(document).ready(function() {
 		});			
 	});
 });
-<!--Nut Back to top-->
+// <!--Nut Back to top-->
 
-<!--Kiểm tra liên hệ-->
+// <!--Kiểm tra liên hệ-->
 function isEmpty(str,text){
 		if(str != "") return false;
 		if(typeof(text) != 'undefined')	alert(text);		
@@ -106,4 +106,4 @@ function add_popup(str){
 	$('#baophu').fadeIn(300);
 	return false;
 }
-<!--Kiểm tra liên hệ-->	
+// <!--Kiểm tra liên hệ-->	

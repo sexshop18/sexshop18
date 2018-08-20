@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
 <script type="text/javascript" src="js/slick.min.js"></script>
 <script type="text/javascript" src="js/modernizr.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<!-- <script type="text/javascript" src="js/main.js"></script> -->
 <!-- slick -->
 <script type="text/javascript">
     $(document).ready(function () {

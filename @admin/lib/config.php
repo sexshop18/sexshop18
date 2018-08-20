@@ -7,7 +7,7 @@
 	// $config['database']['servername'] = '112.213.89.41';
 
 	$config['database']['username'] = 'sexshop1_db';
-	$config['database']['password'] = 'sexshop1_db';
+	$config['database']['password'] = '[X_.4!xD4rf"n*N9DqLK6@t';
 	$config['database']['database'] = 'sexshop1_db';
 	$config['database']['refix'] = 'table_';
 	
