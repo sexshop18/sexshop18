@@ -8,7 +8,7 @@
 
 	$config['database']['username'] = 'sexshop1_db';
 	$config['database']['password'] = '[X_.4!xD4rf"n*N9DqLK6@t';
-	$config['database']['database'] = 'sexshop1_db';
+	$config['database']['database'] = 'sexshop1_test';
 	$config['database']['refix'] = 'table_';
 	
 	$ip_host = '127.0.0.1';

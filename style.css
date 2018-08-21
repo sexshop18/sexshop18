@@ -52,7 +52,7 @@ div#wapper
 }
 div#wap_header
 {
-    /* background:url(images/bg_header.png) center top no-repeat; */
+    background:url(images/bg_header.png) center top no-repeat; 
     background-size:100% 100%;
     /* min-width:1200px; */
 }
@@ -76,7 +76,6 @@ div#header a.logo
 {
     display:block;
     line-height:0;
-    padding:15px 0;
     float:left;
 }
 
@@ -84,7 +83,7 @@ div#header a.logo img
 {
     float:left;
     max-width:400px !important;
-    max-height:110px;
+    max-height:100px;
 }
 div#lang
 {
@@ -186,11 +185,12 @@ div#menu ul li ul li ul
 div.search
 {
     float: left;
-    margin-top: 40px;
-    border: 1px solid #92278f;
+    margin-top: 25px;
+    border: none;
     margin-left: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
-    background: #fff;
+    background: #f4f4f4;
 
 }
 div.search select
@@ -199,7 +199,7 @@ div.search select
     float: left;
     border: none;
     background: none;
-    height: 37px;
+    height: 35px;
     outline:none;
 }
 div.search input
@@ -213,7 +213,7 @@ div.search input
     outline: none;
     color: #3c3b3b;
     margin-left: 20px;
-    border-left: 1px solid #92278f;
+    /*border-left: 1px solid #92278f;*/
     outline:none;
 }
 .tim{
@@ -224,6 +224,7 @@ div.search input
     text-align: center;
     line-height: 37px;
     color: #fff;
+    cursor: pointer;
 }
 .timnhieu{
     position: absolute;
@@ -265,11 +266,13 @@ div.search i
 
 .hotlineh{
     float: right;
-    margin-top: 10px;
+    margin-top: 25px;
     background: url(images/phone_1.png) no-repeat left center;
-    padding: 10px 0;
-    padding-left: 40px;
-    font-size: 14px;    
+    /* padding: 10px 0; */
+    margin-right: 100px;
+    padding-left: 38px;
+    font-size: 14px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
 }
 .hotlineh span{
     color: #92278f;
@@ -278,14 +281,15 @@ div.search i
 }
 .mangxahoi{
 	float: right;
-    right: 36px;
+    right: 0px;
     position: absolute;
-    margin-top: -65px;
+    margin-top: -30px;
 }
 .mangxahoi ul li{
 	list-style: none;
 	float: left;
 	margin: 0 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .mangxahoi ul li img{
 	width: 35px;
@@ -553,8 +557,9 @@ div#right
     display: inline-block;
 }
 .toigiohang{
-    padding-top: 50px;
+    /*padding-top: 50px;*/
     display: inline-block;
+    margin-top: 35px;
     margin-left: 35px;
     
 }
@@ -563,6 +568,7 @@ div#right
     color: #fff;
     padding: 12px 20px;
     text-decoration: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
 }
 div.tieude_giua
@@ -1488,7 +1494,7 @@ footer, header, hgroup, menu, nav, section, main {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1.3em;
 }
 ol, ul {
 	list-style: none;
@@ -1952,4 +1958,13 @@ Primary style
     line-height: 50px;
     text-align: center;
     font-size: 20pt;
+  }
+  
+  figure.caption figcaption{
+      margin-top:10px;
+      font-style:oblique;
+  }
+  
+  div.box_container h3{
+      font-weight: 600;
   }

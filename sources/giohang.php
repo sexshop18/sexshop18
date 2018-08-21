@@ -29,8 +29,8 @@
 		$httt = $_POST['httt'];
 		$hoten = $_POST['hoten'];
 		$dienthoai = $_POST['dienthoai'];
-		$thanhpho = (int)$_POST['thanhpho'];
-		$quan = (int)$_POST['quan'];
+		// $thanhpho = (int)$_POST['thanhpho'];
+		// $quan = (int)$_POST['quan'];
 		$diachi = $_POST['diachi'];
 		$email = $_POST['email'];
 		$noidung = $_POST['noidung'];
@@ -56,18 +56,18 @@
 		$ngaycapnhat = time();	
 		
 		$coloi = false;		
-		if ($hoten == NULL) { 
-			$coloi=true; $error = _nhaphoten;
-		} 
+		// if ($hoten == NULL) { 
+		// 	$coloi=true; $error = _nhaphoten;
+		// } 
 		if ($dienthoai == NULL) { 
 			$coloi=true; $error = _nhapsodienthoai;
 		}
-		if ($thanhpho == NULL) { 
-			$coloi=true; $error = _nhaptinhthanhpho;
-		}
-		if ($quan == NULL) { 
-			$coloi=true; $error = _nhapquanhuyen;
-		}
+		// if ($thanhpho == NULL) { 
+		// 	$coloi=true; $error = _nhaptinhthanhpho;
+		// }
+		// if ($quan == NULL) { 
+		// 	$coloi=true; $error = _nhapquanhuyen;
+		// }
 		if ($diachi == NULL) { 
 			$coloi=true; $error = _nhapdiachi;
 		}
@@ -102,8 +102,8 @@
 			#Mã đơn hàng của đơn hàng hiện tại là
 			$madonhang = date('dmY').'NN'.$songaunhien;
 			//dump($tonggia);
-			$sql = "INSERT INTO  table_donhang (httt,madonhang,hoten,dienthoai,thanhpho,quan,diachi,email,tonggia,noidung,ngaytao,tinhtrang,ngaycapnhat,ip,id_user) 
-			  VALUES ('$httt','$madonhang','$hoten','$dienthoai','$thanhpho','$quan','$diachi','$email','$tonggia','$noidung','$ngaydangky','1','$ngaycapnhat','$ip','$id_user')";	
+			$sql = "INSERT INTO  table_donhang (httt,madonhang,hoten,dienthoai,diachi,email,tonggia,noidung,ngaytao,tinhtrang,ngaycapnhat,ip,id_user) 
+			  VALUES ('$httt','$madonhang','$hoten','$dienthoai','$diachi','$email','$tonggia','$noidung','$ngaydangky','1','$ngaycapnhat','$ip','$id_user')";	
 
 		
 		#Nếu insert bảng đơn hàng thành công thì tiếp tự insert vào bảng chi tiết đơn hàng

@@ -547,6 +547,7 @@ div.item
     display: inline-block;
     vertical-align: top;
     margin-bottom: 10px;
+    
 }
 div.item .sp_name{
     height: 40px;
@@ -779,6 +780,7 @@ div.wap_pro
 {
 
     list-style:none;
+    text-align: justify;
 
 }
 

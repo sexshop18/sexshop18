@@ -88,7 +88,7 @@
 @define ('_xoatatca','Xóa tất cả');
 @define ('_capnhat','Cập nhật');
 @define ('_thanhtoan','Thanh toán');
-@define ('_thongtinkhachhang','Thông tin khách hàng');
+@define ('_thongtinkhachhang','Xác nhận mua hàng');
 
 @define ('_nhapsoluong','Nhập số lượng');
 @define ('_chonsize','Chọn màu');
@@ -106,7 +106,7 @@
 @define ('_khongcosanphamtronggiohang','Không có sản phẩm trong giỏ hàng');
 
 
-@define ('_thongtinkhachhang','Thông tin khách hàng');
+@define ('_thongtinkhachhang','Xác nhận mua hàng');
 @define ('_hinhthucthanhtoan','HT thanh toán');
 @define ('_nhanhanggiaotien','Nhận hàng giao tiền');
 @define ('_quathenganhang','Qua thẻ ngân hàng');

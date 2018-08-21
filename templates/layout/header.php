@@ -51,7 +51,6 @@ $mangxahoi=$d->result_array();
     <a href="#0" class="cd-3d-nav-trigger menu_main_nav"><i style="color:  deeppink;" class="fas fa-venus-double"></i></a>
     <a href="#0" class="cd-3d-nav-trigger menu_main_nav"><i  class="fas fa-mars"></i></a>
     <a href="#0" class="cd-3d-nav-trigger menu_main_nav"><i style="color:  deeppink;" class="fas fa-venus"></i></a>
-    </div>
 </header> <!-- .cd-header -->
 	
 	<nav class="cd-3d-nav-container">
@@ -83,9 +82,6 @@ $mangxahoi=$d->result_array();
             var tmp = readCookie('id_product_select');
             $('.cd-3d-nav li#'+tmp).addClass('cd-selected').siblings('li').removeClass('cd-selected');
             updateSelectedNav('close');
-            eraseCookie('id_product_select');
-            console.log(tmp);
-
             $(window).on('resize', function(){
                 window.requestAnimationFrame(updateSelectedNav);
             });
@@ -138,9 +134,6 @@ $mangxahoi=$d->result_array();
                     expires = "";
                 }
                 document.cookie = name + "=" + value + expires + "; path=/";
-            }
-            function eraseCookie(name) {
-                document.cookie = name + '=; Max-Age=0'
             }
             function readCookie(name) {
                 var i, c, ca, nameEQ = name + "=";

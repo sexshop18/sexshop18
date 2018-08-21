@@ -114,7 +114,7 @@ if($_REQUEST['command']=='delete' && $_REQUEST['pid']>0){
      <div class="frm_lienhe">
     <form method="post" name="frm_order" id="frm_order" action="" enctype="multipart/form-data" onsubmit="return check();">
     
-    	<div class="item_lienhe"><p class="no"><?=_htthanhtoan?>:<span>*</span></p>
+    	<div class="item_lienhe"><p class="no"><?=_htthanhtoan?><span>*</span></p>
         <select name="httt" id="httt">
             <option value=""><?=_chonhinhthucthanhtoan?></option>
             <?php for($i=0,$count_get_httt=count($get_httt);$i<$count_get_httt;$i++) { ?>
@@ -122,36 +122,40 @@ if($_REQUEST['command']=='delete' && $_REQUEST['pid']>0){
             <?php } ?>
         </select></div>
         
-    	<div class="item_lienhe"><p class="no"><?=_hovaten?>:<span>*</span></p><input name="hoten" type="text" id="hoten" value="<?php if($_POST['hoten']!='')echo $_POST['hoten'];else echo $info_user['ten']?>" /></div>
+    	<div class="item_lienhe"><p class="no"><?=_hovaten?></p><input placeholder="Nguyễn Văn A" name="hoten" type="text" id="hoten" value="<?php if($_POST['hoten']!='')echo $_POST['hoten'];else echo $info_user['ten']?>" /></div>
         
-        <div class="item_lienhe"><p class="no"><?=_dienthoai?>:<span>*</span></p><input onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" name="dienthoai" id="dienthoai" value="<?php if($_POST['dienthoai']!='')echo $_POST['dienthoai'];else echo $info_user['dienthoai']?>" type="text"  /></div>
+        <div class="item_lienhe"><p class="no"><?=_dienthoai?>:<span>*</span></p><input onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" name="dienthoai" id="dienthoai" placeholder="0987456321..." value="<?php if($_POST['dienthoai']!='')echo $_POST['dienthoai'];else echo $info_user['dienthoai']?>" type="text"  /></div>
         
-        <div class="item_lienhe"><p class="no"><?=_tinhthanhpho?>:<span>*</span></p>
+        <!-- <div class="item_lienhe"><p class="no"><?=_tinhthanhpho?>:<span>*</span></p>
             <select name="thanhpho" id="thanhpho">
                 <option value=""><?=_chontinhthanhpho?></option>
                 <?php for($i = 0, $count_place_city = count($place_city); $i < $count_place_city; $i++){ ?>
                     <option value="<?=$place_city[$i]['id']?>"><?=$place_city[$i]['ten']?></option>
                 <?php } ?>
             </select>
-        </div>
+        </div> -->
         
-        <div class="item_lienhe"><p class="no"><?=_quanhuyen?>:<span>*</span></p>
+        <!-- <div class="item_lienhe"><p class="no"><?=_quanhuyen?>:<span>*</span></p>
             <select name="quan" id="quan">
             	<option><?=_chonquanhuyen?></option>
             </select>
-        </div>
+        </div> -->
         
-         <div class="item_lienhe"><p class="no"><?=_diachi?>:<span>*</span></p><input name="diachi" type="text" id="diachi" value="<?php if($_POST['diachi']!='')echo $_POST['diachi'];else echo $info_user['diachi']?>" /></div>
+         <div class="item_lienhe">
+		 <p class="no"><?=_diachi?><span>*</span></p>
+		 <input placeholder="Nhập địa chỉ nhận hàng (123 XYZ, Quận/huyện, thành phố)" name="diachi" type="text" id="diachi"  value="<?php if($_POST['diachi']!='')echo $_POST['diachi'];else echo $info_user['diachi']?>" />
+		 </div>
 
-        <div class="item_lienhe"><p class="no">E-mail:</p><input name="email" type="text" id="email" value="<?php if($_POST['email']!='')echo $_POST['email'];else echo $info_user['email']?>" /></div>
+        <div class="item_lienhe"><p class="no">E-mail</p><input placeholder="nguyenvanA@email.com" name="email" type="text" id="email" value="<?php if($_POST['email']!='')echo $_POST['email'];else echo $info_user['email']?>" /></div>
         
-        <div class="item_lienhe"><p class="no"><?=_ghichu2?>:</p><textarea name="noidung"  cols="50" rows="4" ><?=$_POST['noidung']?></textarea></div>
+        <div class="item_lienhe"><p class="no"><?=_ghichu2?></p><textarea placeholder="Bạn có thể thêm yêu cầu khác vào đây!"  name="noidung"  cols="50" rows="4" ><?=$_POST['noidung']?></textarea></div>
       </form>
       </div>
       
-      <div style="text-align:center;">
+      <div style="text-align:center;width: 100%;margin-left: 9px;">
         <input class="btn button click_ajax" type="button" value="<?=_tieptucmuahang?>" onclick="window.location.href='index.html'" style=" border:1px solid #000; color:#000; background:#fff; padding:6px 25px; border-radius:0;" />
          <input title='<?=_dathang?>' type="button" class="click_ajax click_ajax2" value="<?=_dathang?>" style="background:#9f319b; color:#fff; border:1px solid #9f319b;padding:6px 25px; border-radius:0; margin-left:12px;" />	
+		 (<span style="color:red;">*</span>) Vui lòng nhập chính xác thông tin để giao hàng nhanh và tiết kiệm hơn!
         </div>
   </div>
 </div>
@@ -159,17 +163,17 @@ if($_REQUEST['command']=='delete' && $_REQUEST['pid']>0){
 
 <script type="text/javascript">
 	$(document).ready(function(e) {
-		$('#thanhpho').change(function(){
-			var id_city = $(this).val();
-			$.ajax({
-				type:'post',
-				url:'ajax/place.php',
-				data:{act:'dist',id_city:id_city},
-				success:function(rs){
-					$('#quan').html(rs);
-				}
-			});
-		});
+		// $('#thanhpho').change(function(){
+		// 	var id_city = $(this).val();
+		// 	$.ajax({
+		// 		type:'post',
+		// 		url:'ajax/place.php',
+		// 		data:{act:'dist',id_city:id_city},
+		// 		success:function(rs){
+		// 			$('#quan').html(rs);
+		// 		}
+		// 	});
+		// });
 		
 		$('.click_ajax2').click(function(){
 			if(isEmpty($('#httt').val(), "<?=_chonhinhthucthanhtoan?>"))
@@ -177,11 +181,11 @@ if($_REQUEST['command']=='delete' && $_REQUEST['pid']>0){
 				$('#httt').focus();
 				return false;
 			}
-			if(isEmpty($('#hoten').val(), "<?=_nhaphoten?>"))
-			{
-				$('#hoten').focus();
-				return false;
-			}
+			// if(isEmpty($('#hoten').val(), "<?=_nhaphoten?>"))
+			// {
+			// 	$('#hoten').focus();
+			// 	return false;
+			// }
 			if(isEmpty($('#dienthoai').val(), "<?=_nhapsodienthoai?>"))
 			{
 				$('#dienthoai').focus();
@@ -192,16 +196,16 @@ if($_REQUEST['command']=='delete' && $_REQUEST['pid']>0){
 				$('#dienthoai').focus();
 				return false;
 			}
-			if(isEmpty($('#thanhpho').val(), "<?=_chontinhthanhpho?>"))
-			{
-				$('#thanhpho').focus();
-				return false;
-			}
-			if(isEmpty($('#quan').val(), "<?=_chonquanhuyen?>"))
-			{
-				$('#quan').focus();
-				return false;
-			}
+			// if(isEmpty($('#thanhpho').val(), "<?=_chontinhthanhpho?>"))
+			// {
+			// 	$('#thanhpho').focus();
+			// 	return false;
+			// }
+			// if(isEmpty($('#quan').val(), "<?=_chonquanhuyen?>"))
+			// {
+			// 	$('#quan').focus();
+			// 	return false;
+			// }
 			
 			if(isEmpty($('#diachi').val(), "<?=_nhapdiachi?>"))
 			{
